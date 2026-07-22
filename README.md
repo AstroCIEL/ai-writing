@@ -36,11 +36,6 @@
   - [Skills 总览](#skills-总览)
   - [使用场景与示例 Prompt](#使用场景与示例-prompt)
 
-### Part II: 论文写作相关的 Skills
-- [Skills 的配置](#skills-的配置)
-- [Skills 总览](#skills-总览)
-- [使用场景与示例 Prompt](#使用场景与示例-prompt)
-
 ---
 
 # Part I: 写作 Prompt 集合
