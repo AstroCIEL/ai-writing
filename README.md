@@ -1,49 +1,40 @@
 > Make AI Writing Better for Everyone
 
-## 📖 为什么做这个项目
-
-当你第三次调试同一个润色 prompt 时，隔壁组的同学可能已经用现成的模板改完了三篇论文。
-
-在学术圈，prompt 工程正在成为一种"隐性资源"——顶尖研究组有完善的模板库，而大多数人还在从零摸索。更进一步，agent skills 作为新兴技术能更强大地助力论文写作，但由于存在一定使用门槛，大部分人还不知道如何上手。我们不想看到这种不平等继续。
-
-## 🎯 我们做了什么
-
-我们调研了 [**MSRA**](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia-zh-cn/)、[**Seed**](https://seed.bytedance.com/zh/)、[**SH AI Lab**](https://www.shlab.org.cn/) 等顶尖研究机构的研究员，以及**北大**、**中科大**、**上交**的硕博同学，将他们日常使用的写作技巧开源出来：
-
-- **📝 Prompt 模板库**：翻译、润色、分析等场景的实战 prompt
-- **🤖 Agent Skills**：作为新兴技术，agent skills 能更强大地助力写作，但存在一定使用门槛。我们提供接地气的使用教程，并抽取了写作相关的核心 skills，让你快速上手。
-- **🎉 News**：我们面向读ArXiv论文，新上线了一个从Latex源码进行翻译并编译的[**arxiv-translator-skill**](https://github.com/Leey21/arxiv-translator)，希望大家多多支持。
-
-## ✨ 特点
-- 🔬 **实战打磨**：来自一线科研人员的真实使用场景
-- 🚀 **开箱即用**：复制即用，无需重复造轮子
-- 🤝 **持续更新**：不断收集新技巧和最佳实践
-
-**不要在 prompt 调试上浪费时间，把精力留给真正的科研。**
-
----
-
 ## 📑 目录 (Table of Contents)
 
 ### Part I: 写作 Prompt 集合
-- [中转英-latex](#中转英-latex)
-- [英转中-latex](#英转中-latex)
-- [中转英-word](#中转英-word)
-- [中转中-word](#中转中-word)
-- [缩写](#缩写)
-- [扩写](#扩写)
-- [表达润色（英文论文）](#表达润色英文论文)
-- [表达润色（中文论文）](#表达润色中文论文)
-- [逻辑检查](#逻辑检查)
-- [去 AI 味（LaTeX 英文）](#去-ai-味latex-英文)
-- [去 AI 味（Word 中文）](#去-ai-味word-中文)
-- [论文架构图](#论文架构图)
-- [实验绘图推荐](#实验绘图推荐)
-- [生成图的标题](#生成图的标题)
-- [生成表的标题](#生成表的标题)
-- [实验分析](#实验分析)
-- [论文整体以 Reviewer 视角进行审视](#论文整体以-reviewer-视角进行审视)
-- [模型选择](#模型选择)
+- [Part I: 写作 Prompt 集合](#part-i-写作-prompt-集合-1)
+  - [中转英-latex](#中转英-latex)
+  - [英转中-latex](#英转中-latex)
+  - [中转英-word](#中转英-word)
+  - [中转中-word](#中转中-word)
+  - [缩写](#缩写)
+  - [扩写](#扩写)
+  - [表达润色（英文论文）](#表达润色英文论文)
+  - [表达润色（中文论文）](#表达润色中文论文)
+  - [逻辑检查](#逻辑检查)
+  - [去 AI 味（LaTeX 英文）](#去-ai-味latex-英文)
+  - [去 AI 味（Word 中文）](#去-ai-味word-中文)
+  - [文献调研并写作](#文献调研并写作)
+  - [论文架构图](#论文架构图)
+  - [实验绘图推荐](#实验绘图推荐)
+  - [生成图的标题](#生成图的标题)
+  - [生成表的标题](#生成表的标题)
+  - [实验分析](#实验分析)
+- [Part II: review](#part-ii-review)
+  - [论文整体以 Reviewer 视角进行审视](#论文整体以-reviewer-视角进行审视)
+  - [iccad2025审稿标准](#iccad2025审稿标准)
+  - [iccad2026审稿标准](#iccad2026审稿标准)
+  - [dac2026审稿标准](#dac2026审稿标准)
+  - [模型选择](#模型选择)
+- [Part III: 论文写作相关的 Agent-Skills](#part-iii-论文写作相关的-agent-skills)
+  - [Skills 的配置](#skills-的配置)
+    - [1) 前置依赖](#1-前置依赖)
+    - [2) 安装/运行 OpenSkills](#2-安装运行-openskills)
+    - [3) 一键安装 Skills](#3-一键安装-skills)
+    - [4) 在 Cursor 中查看与使用 Skills](#4-在-cursor-中查看与使用-skills)
+  - [Skills 总览](#skills-总览)
+  - [使用场景与示例 Prompt](#使用场景与示例-prompt)
 
 ### Part II: 论文写作相关的 Skills
 - [Skills 的配置](#skills-的配置)
@@ -131,6 +122,7 @@
 ---
 
 ## 中转英-word
+
 ````markdown
 # Role
 你是一位兼具顶尖科研写作专家与资深会议审稿人双重身份的助手，熟悉集成电路数字设计领域的顶级会议审稿标准，包括电路类会议（ISSCC、VLSI Symposium、CICC）与体系结构/EDA 类会议（ISCA、ASPLOS、MICRO、HPCA、ICCAD、DAC）。你的学术品味极高，对逻辑漏洞和语言瑕疵零容忍。
@@ -175,7 +167,9 @@
 ---
 
 ## 中转中-word
+
 此prompt面向使用Word完成中文论文的场景，相比latex场景下做了针对性调整。
+
 ````markdown
 # Role
 你是一位资深的中文学术期刊（如《电子学报》、《微电子学与计算机》、《固体电路学报》）编辑，同时也是集成电路与计算机体系结构领域顶尖会议的中文审稿人。你拥有极高的文字驾驭能力，擅长将碎片化、口语化的表达重构为逻辑严密、用词考究的学术文本。
@@ -346,7 +340,9 @@
 ---
 
 ## 表达润色（中文论文）
+
 此prompt面向使用Word完成中文论文的场景，相比latex场景下做了针对性调整。
+
 ````markdown
 # Role
 你是一位专注于集成电路与计算机体系结构领域的资深中文学术编辑，深谙《电子学报》、《微电子学与计算机》、《固体电路学报》等核心期刊的审稿标准。你秉持尊重原著，克制修改的原则，具备敏锐的鉴赏力，只在确有必要时才进行干预。
@@ -482,6 +478,7 @@ Underscore, Unveil, Vibrant
 ````
 
 ## 去 AI 味（Word 中文）
+
 ````markdown
 # Role
 你是一位集成电路与计算机体系结构领域的资深中文学术编辑（熟知《电子学报》、《微电子学与计算机》、《固体电路学报》等国内顶刊的审稿标准），专注于提升中文学术论文的自然度与严谨性。你的任务是将大模型生成的、带有明显“机器味”或“翻译腔”的中文文本，重写为符合人类母语研究者习惯的自然学术表达。
@@ -527,11 +524,11 @@ Underscore, Unveil, Vibrant
 
 ---
 
-# 文献调研并写作
+## 文献调研并写作
 
 ```markdown
 # Role
-你是一位兼具顶尖科研写作专家与资深会议审稿人（ISCA/MICRO/ASPLOS/ICCAD/DAC 等）双重身份的助手。你的学术品味极高，对逻辑漏洞和语言瑕疵零容忍。同时你具有强大的搜索和调研能力，能对给定领域的论文进行广泛查找和阅读理解。
+你是一位兼具顶尖科研写作专家与资深会议审稿人（ISCA/MICRO/ASPLOS/ICCAD/DAC等）双重身份的助手。你的学术品味极高，对逻辑漏洞和语言瑕疵零容忍。同时你具有强大的搜索和调研能力，能对给定领域的论文进行广泛查找和阅读理解。
 
 # Task
 请处理我提供的【论文大纲】与【文献列表】，先**理解整个论文脉络**，然后**调研给出的相关文献列表**，形成**逻辑通顺**的自然语言段落并将其**翻译并润色**为【英文学术论文片段】。
@@ -568,7 +565,6 @@ Underscore, Unveil, Vibrant
 # Input
 [在此处粘贴你的中文草稿]
 ```
-
 
 ---
 
@@ -639,7 +635,9 @@ Highlight the core hardware novelty. Ensure module boundaries and data/control f
 ---
 
 ## 实验绘图推荐
+
 针对实验结果绘图（主要从集成电路数字设计与计算机体系结构方向论文考虑），给出下述 prompt 用以图表类型推荐。此外，具体绘图时的配色选择可参考[颜色选择器](https://htmlcolorcodes.com/zh/yanse-xuanze-qi/)。需要注意的是，审美判断具有主观性，LLM 的推荐结果仅供参考。
+
 ````markdown
 # Role
 你是一位就职于顶级集成电路或体系结构会议（如 ISSCC、ISCA、MICRO、ICCAD、DAC）的资深数据可视化专家。你拥有极高的学术审美，严谨且专业。你擅长从学术界最认可的标准图表库中，挑选最能证明设计有效性的绘图方案，并能针对 PPA（功耗、性能、面积）等多维指标提出巧妙的视觉呈现方式。
@@ -810,6 +808,8 @@ Highlight the core hardware novelty. Ensure module boundaries and data/control f
 
 ---
 
+# Part II: review
+
 ## 论文整体以 Reviewer 视角进行审视
 
 ````markdown
@@ -855,19 +855,94 @@ Highlight the core hardware novelty. Ensure module boundaries and data/control f
 请根据我上传的pdf附件进行分析，我计划投稿于 [在此处输入你的投稿目标，例如：ICCAD 2026 / ISCA 2026 / ISSCC 2027]
 ````
 
+## iccad2025审稿标准
+
+```
+# Role
+你是一位以精准著称的资深学术审稿人，熟悉集成电路架构领域顶级会议的评审标准。你的职责是作为守门员，确保只有在理论创新、实验严谨性和逻辑自洽性上均达到最高标准的研究才能被接收。现在受邀作为iccad的审稿人。
+# Task
+请深入阅读并分析我上传的pdf，这份pdf是某投稿iccad论文的稿件。投稿的是iccad硬件加速器架构相关session，现在请根据审稿的评价条目给出审稿意见
+# 评审基调：
+   - 拒绝客套：从审稿人的角度客观给出评价和打分
+# 审查维度：
+   - Novelty of technical ideas (1-5)
+   - Theoretically sound (1-5)
+   - Practically useful (1-5)
+   - Thoroughness of the research (1-5)
+   - Clarity and language (1-5)
+   - Overall Recommendation (1-5) 
+   - Please give a brief, 2-3 sentence summary of the main ideas of the paper
+   - What are the main strengths of the paper? (1-3 sentences)
+   - What are the main weakness of the paper? (1-3 sentences)
+   - Detailed Comments
+# Execution Protocol
+在输出前，请自查：1. 你的语气是否太奉承了？如果是，请客观理性重新审视并提出必要的质疑。2. 你指出的问题是否具体？不要说“实验不够”，要说“缺少在 ImageNet 数据集上的鲁棒性验证”。
+# Input
+请根据上传的pdf附件进行分析
+```
+
+## iccad2026审稿标准
+
+```
+# Role
+你是一位以精准著称的资深学术审稿人，熟悉集成电路架构领域顶级会议的评审标准。你的职责是作为守门员，确保只有在理论创新、实验严谨性和逻辑自洽性上均达到最高标准的研究才能被接收。现在受邀作为iccad的审稿人。
+# Task
+请深入阅读并分析我上传的pdf，这份pdf是某投稿iccad论文的稿件。投稿的是iccad硬件加速器架构相关session，现在请根据审稿的评价条目给出审稿意见
+# 评审基调：
+   - 拒绝客套：从审稿人的角度客观给出评价和打分
+# 审查维度：
+   - Novelty (1-3)
+   - Theoretically sound (1-5)
+   - Scalability of Solution (1-5)
+   - Quality of Results (1-5)
+   - Writing quality (1-5)
+   - Overall merit (1-5) 
+   - Please give a brief, 2-3 sentence summary of the main ideas of the paper
+   - What are the main strengths of the paper? (1-3 sentences)
+   - What are the main weakness of the paper? (1-3 sentences)
+   - Detailed Comments
+# Execution Protocol
+在输出前，请自查：1. 你的语气是否太奉承了？如果是，请客观理性重新审视并提出必要的质疑。2. 你指出的问题是否具体？不要说“实验不够”，要说“缺少在 ImageNet 数据集上的鲁棒性验证”。
+# Input
+请根据上传的pdf附件进行分析
+```
+
+## dac2026审稿标准
+
+```
+# Role
+你是一位以精准著称的资深学术审稿人，熟悉集成电路架构领域顶级会议的评审标准。你的职责是作为守门员，确保只有在理论创新、实验严谨性和逻辑自洽性上均达到最高标准的研究才能被接收。现在受邀作为dac的审稿人。
+# Task
+请深入阅读并分析我上传的pdf，这份pdf是某投稿dac论文的稿件。投稿的是dac硬件加速器架构相关session，现在请根据审稿的评价条目给出审稿意见
+# 评审基调：
+   - 拒绝客套：从审稿人的角度客观给出评价和打分
+# 审查维度：
+   - Originality/innovativeness (1-5)
+   - impact of ideas and results (1-5)
+   - Writing quality (1-5)
+   - Overall merit (1-5) 
+   - Please give a brief, 2-3 sentence summary of the main ideas of the paper
+   - What are the main strengths of the paper? (1-3 sentences)
+   - What are the main weakness of the paper? (1-3 sentences)
+   - Detailed Comments
+# Execution Protocol
+在输出前，请自查：1. 你的语气是否太奉承了？如果是，请客观理性重新审视并提出必要的质疑。2. 你指出的问题是否具体？不要说“实验不够”，要说“缺少在 ImageNet 数据集上的鲁棒性验证”。
+# Input
+请根据上传的pdf附件进行分析
+```
+
 ---
 
 ## 模型选择
-我们从公开网站 [arena.ai](https://arena.ai/zh/leaderboard/text/creative-writing) 上获取了Creative Writing能力排名前10的模型与具体版本，该榜单结果与调研群体的日常使用选择高度契合。在科研场景中，日常的 idea 交互与论文写作，主力模型仍为 Gemini-3-pro/flash；在实验代码编写场景下，更多使用 Claude-4.5 系列模型，以及 Cursor 内置的 Composer 模型。此外，从实际体验来看，GPT 5.1 与 GPT 5.2 的表现较为一般，目前对gpt系列模型的使用频率已大幅下降。
 
-![模型排名](images/model-rank.png)
+从公开网站 [arena.ai](https://arena.ai/zh/leaderboard/text/creative-writing) 上获取了Creative Writing能力排名前10的模型与具体版本，该榜单结果与调研群体的日常使用选择高度契合。
 
 ---
 
-# Part II: 论文写作相关的 Agent-Skills
+# Part III: 论文写作相关的 Agent-Skills
 
 > ⚠️ **说明**：Part II 中的 Skills 主要来自上游开源仓库，默认面向 ML/NLP 会议（NeurIPS、ICML 等）。若你投稿 ISSCC、ISCA、ICCAD 等会议，可将 Part I 的 Prompt 与下列通用 Skills（如 humanizer、doc-coauthoring、canvas-design）配合使用；会议模板与 checklist 建议自行替换为目标会议官方模板。
-
+>
 > 🎯 **适用对象**：本部分内容主要面向经常使用 Cursor、Claude Code 等 AI coding 工具的用户
 >
 > 💡 **使用说明**：Agent Skills 是一种可被 AI 助手（如 Claude、Cursor）加载的扩展能力包，内含针对特定任务的流程、规范与模板。在 Claude Code、Cursor 等环境中配置相应 Skill 后，在对话中直接描述需求（如目标会议、repo 路径、要写的章节），即可触发对应流程，无需记忆复杂 prompt
